@@ -75,7 +75,24 @@ The actual contents of your `force-app` folder may vary depending on your projec
 
 ## Deployment
 
-Deploy the components using Salesforce DX commands:
+To deploy only the LWC components:
 
 ```sh
 sfdx force:source:deploy -p force-app/main/default/lwc
+```
+
+To deploy the complete `force-app` source (including Apex classes, objects, and all metadata):
+
+```sh
+sfdx force:source:deploy -p force-app
+```
+
+Or, to deploy everything in your default package directory:
+
+```sh
+sfdx force:source:deploy -p force-app/main/default
+```
+
+---
+
+For more details, see the [Salesforce LWC documentation](https://developer.salesforce.com/docs/component-library/documentation/en/lwc).
