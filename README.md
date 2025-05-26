@@ -1,4 +1,4 @@
-# Lightning Web Components (LWC) Overview
+# Booking Vehicle using FullCalendar (v3)
 
 ![Booking App Screenshot](assets/Booking1.png)
 ![Booking App Screenshot](assets/Booking2.png)
@@ -96,3 +96,6 @@ sfdx force:source:deploy -p force-app/main/default
 ---
 
 For more details, see the [Salesforce LWC documentation](https://developer.salesforce.com/docs/component-library/documentation/en/lwc).
+
+## Data load 
+- **Vehicle Object**: Dowload csv from assets folder and load it Vehicle Object.
