@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Booking Map">
+
+        <template if:true={isLoaded}>
+            <lightning-map map-markers={mapMarkers} list-view="visible">
+            </lightning-map>
+
+        </template>
+        <template if:false={isLoaded}>
+            <lightning-spinner alternative-text="Loading" size="small" variant="brand"
+                class="slds-is-fixed"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

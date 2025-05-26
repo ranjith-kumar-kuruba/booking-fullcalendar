@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Car Booking">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12 slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-box">
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-around_medium">
+                        <lightning-record-picker label="Vehicle" placeholder="Select Vehicle..."
+                            object-api-name="Vehicle__c" value={vehicleId} onchange={handleChange} size="large"
+                            display-info={displayInfo} variant="label-hidden"></lightning-record-picker>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12 slds-p-around_medium">
+                        <lightning-button label="Add Booking" title="Add Car Booking"
+                            onclick={handleBooking}></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12 slds-p-around_medium">
+                <c-booking-list selected-vehicle={vehicleId} onbookings={handleBookings}></c-booking-list>
+            </div>
+        </div>
+    </lightning-card>
+
+
+    <div style="margin-top: 1rem;">
+        <template if:true={isBookings}>
+            <lightning-card title="Booking Calendar">
+                <div class="calendar" lwc:dom="manual"></div>
+            </lightning-card>
+        </template>
+        <template if:false={isBookings}>
+            <lightning-card title="Booking Calendar">
+                <div class="slds-align_absolute-center">
+                    <p>No Bookings Found !!</p>
+                </div>
+            </lightning-card>
+        </template>
+    </div>
+
+    <template if:true={isModal}>
+        <c-add-booking onclosemodal={handleClose} onrecordsuccess={handleSuccess}></c-add-booking>
+    </template>
+</template>

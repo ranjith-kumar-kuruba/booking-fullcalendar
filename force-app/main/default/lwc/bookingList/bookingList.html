@@ -1,0 +1,11 @@
+<template>
+    <template if:true={isBookings}>
+        <lightning-datatable key-field="id" data={bookings} show-row-number-column hide-checkbox-column
+            columns={columns}></lightning-datatable>
+    </template>
+    <template if:false={isBookings}>
+        <div class="slds-align_absolute-center">
+            <p>No Bookings Found !!</p>
+        </div>
+    </template>
+</template>
